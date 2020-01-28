@@ -321,14 +321,13 @@ figure {
     }
   }
 }
-#gtco-header {
-  background: url(../images/banner.jpg);
-  padding: 100px 0 0 0;
-  color: #fff;
-}
+
 #gtco-header,
 #gtco-counter,
 .gtco-bg {
+  background: url(../images/banner.jpg);
+  padding: 100px 0 0 0;
+  color: #fff;
   background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
