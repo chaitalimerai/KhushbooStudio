@@ -224,7 +224,7 @@ figure {
         text-transform: uppercase;
         // color: rgba(255,255,255,.5);
         color: #000;
-        font-weight: 600;
+        // font-weight: 600;
         @include transition(0.5s);
         &:hover,
         &:focus {
@@ -962,7 +962,7 @@ form {
       a {
         color: $brand-black;
         text-decoration: none;
-        font-weight: bold;
+        // font-weight: bold;
         &:hover {
           text-decoration: underline;
         }
@@ -1037,7 +1037,7 @@ form {
   }
   a {
     color: $brand-red;
-    font-weight: bold;
+    // font-weight: bold;
 
     &:hover {
       color: rgba(255, 255, 255, 0.8);

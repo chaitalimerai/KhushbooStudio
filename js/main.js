@@ -338,21 +338,28 @@ $('.hero-slider').owlCarousel({
 /*------------------
 	Banner Slider
 --------------------*/
-$('.bannerslider').owlCarousel({
-	nav: false,
-	loop: true,
-	animateOut: 'fadeOut',
-	autoplay: true,
-	smartSpeed: 3000,
-	responsive: {
-		0: {
-			items: 1,
-		},
-		768: {
-			items: 1,
-		},
-		1200: {
-			items: 1,
-		}
-	}
+// var homeSwiper = new Swiper(".home-swiper-container", {
+// 	fadeEffect: { crossFade: true },
+// 	// AutoPlay
+// 	autoplay: 500,
+// 	speed: 1000,
+// 	autoplayDisableOnInteraction: true,
+// 	slidersPerView: 1,
+// 	effect: "fade"
+// });
+
+var homeSwiper = new Swiper('.home-swiper-container',
+{
+	fadeEffect: { crossFade: true },
+	speed: 1000,
+	autoplay:
+	{
+		delay: 2000,
+	},
+	effect: "fade",
+	loop:true
 });
+
+
+var copyrightYear = new Date().getFullYear();
+document.getElementById("copyrightYear").innerHTML = copyrightYear;
