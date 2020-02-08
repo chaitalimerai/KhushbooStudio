@@ -5,11 +5,11 @@ $grid-gutter-width: 40px !default;
 $border-radius-base: 4px !default;
 $padding-base-vertical: 14px !default;
 
-$brand-primary: #e9262a !default;
+$brand-primary: #f85a16 !default;
 $brand-secondary: #118df0 !default;
 
-$brand-white: #ffffff;
 $brand-red: #dc3545;
+$brand-white: #fff;
 $brand-black: #000;
 $brand-darker: #444;
 $brand-gray: #ccc;
@@ -91,7 +91,6 @@ $form-group-margin-bottom: 30px !default;
 // Import
 @import "bootstrap/mixins";
 @import "bootstrap/variables";
-@import "assets/home/content";
 
 /* =======================================================
 *
@@ -179,12 +178,18 @@ figure {
   padding-right: 15px;
 }
 
+.bg-light {
+  background-color: rgba(255, 255, 255, 0.59) !important;
+}
+.bg-transparent {
+  background-color: transparent !important;
+}
+
 .gtco-nav {
   position: fixed;
   top: 0;
   // background-color: rgba(#4d4042,#4d4042,#4d4042,0.5);
   // box-shadow: 0px 4px 11px 1px #4d4042;
-  background-color: rgba(255, 255, 255, 0.59);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -324,6 +329,15 @@ figure {
 
 #gtco-header,
 #gtco-counter,
+.gtco-video-bg {
+  background-position: center center;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+#gtco-header,
+#gtco-counter,
 .gtco-bg {
   background: url(../images/banner.jpg);
   padding: 100px 0 0 0;
@@ -333,19 +347,11 @@ figure {
   background-repeat: no-repeat;
   position: relative;
 }
-.gtco-bg {
-  background-position: center center;
-  width: 100%;
-  float: left;
-  position: relative;
-}
 
 .gtco-video {
   height: 450px;
   overflow: hidden;
-  @media screen and (max-width: $screen-sm) {
-    margin-bottom: 30px;
-  }
+  margin-bottom: 30px;
   @include border-radius(7px);
   &.gtco-video-sm {
     height: 250px;
@@ -359,11 +365,9 @@ figure {
     margin-left: -45px;
     width: 90px;
     height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: table;
     text-align: center;
-    background: $brand-lighter;
+    background: $brand-white;
 
     -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
@@ -375,6 +379,7 @@ figure {
       display: table-cell;
       vertical-align: middle;
       font-size: 40px;
+      color: $brand-red;
     }
   }
   .overlay {
@@ -514,6 +519,7 @@ figure {
       padding-right: 10px;
       i {
         font-size: 20px;
+        color: $brand-red;
       }
     }
   }
@@ -646,7 +652,7 @@ form {
 #gtco-subscribe,
 #gtco-footer,
 .gtco-section {
-  padding: 3em 0;
+  padding: 7em 0;
   clear: both;
   @media screen and (max-width: $screen-sm) {
     padding: 3em 0;
@@ -762,7 +768,7 @@ form {
     // display: none;
     text-align: center;
     span {
-      // font-size: 12px;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 700;
@@ -774,7 +780,7 @@ form {
       @include inline-block;
 
       img {
-        // width: 90px;
+        width: 90px;
         @include border-radius(50%);
       }
     }
@@ -962,7 +968,6 @@ form {
       a {
         color: $brand-black;
         text-decoration: none;
-        // font-weight: bold;
         &:hover {
           text-decoration: underline;
         }
@@ -1036,11 +1041,11 @@ form {
     @include translateX(0px);
   }
   a {
-    color: $brand-red;
-    // font-weight: bold;
-
+    color: rgba(220, 53, 69, 0.9);
+    // color: $brand-red;
     &:hover {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(220, 53, 69, 0.9);
+      // color: rgba(255,255,255,.8);
     }
   }
   ul {
@@ -1049,7 +1054,6 @@ form {
     li {
       padding: 0;
       margin: 0;
-      margin-bottom: 10px;
       list-style: none;
       > ul {
         padding-left: 20px;
@@ -1059,15 +1063,15 @@ form {
         > a {
           display: block;
           position: relative;
-          // &:after {
-          // 	position: absolute;
-          // 	right: 0px;
-          // 	@include icomoon;
-          // 	content: "\e921";
-          // 	font-size: 20px;
-          // 	color: rgba(255,255,255,.2);
-          // 	@include transition(.5s);
-          // }
+          &:after {
+            position: absolute;
+            right: 0px;
+            @include icomoon;
+            content: "\e921";
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.2);
+            @include transition(0.5s);
+          }
         }
         &.active {
           a {
@@ -1108,7 +1112,7 @@ form {
     width: 50px;
     height: 50px;
     display: table;
-    background: $brand-red;
+    background: rgba(0, 0, 0, 0.5);
     color: $brand-white;
     text-align: center;
     @include border-radius(4px);
@@ -1135,7 +1139,7 @@ form {
   &.active i {
     &::before,
     &::after {
-      background: $brand-red;
+      background: $brand-darker;
     }
   }
   &:hover,
@@ -1168,11 +1172,11 @@ form {
   }
   &.gtco-nav-white {
     > i {
-      color: $brand-red;
-      background: $brand-red;
+      color: $brand-white;
+      background: $brand-white;
       &::before,
       &::after {
-        background: $brand-red;
+        background: $brand-white;
       }
     }
   }
@@ -1210,7 +1214,7 @@ form {
   transform: rotateZ(-45deg);
 }
 .gtco-nav-toggle {
-  position: fixed;
+  position: absolute;
   right: 0px;
   top: 10px;
   // top: 100px;

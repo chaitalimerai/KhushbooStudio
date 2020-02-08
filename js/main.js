@@ -1,3 +1,18 @@
+$(window).scroll(function () {
+	var scroll = $(window).scrollTop();
+	if (scroll >= 200) {
+		// $('.gtco-nav').addClass('bg-transparent');
+		$('.gtco-nav').addClass('bg-transparent');
+		$('.gtco-nav').removeClass('bg-light');
+	} else {
+		$('.gtco-nav').addClass('bg-light');
+		$('.gtco-nav').removeClass('bg-transparent');
+		// $('.gtco-nav').removeClass('bg-light');
+
+	}
+});
+
+
 ; (function () {
 
 	'use strict';
@@ -291,8 +306,6 @@
 
 }());
 
-
-
 /*------------------
 	Background Set
 --------------------*/
@@ -338,27 +351,17 @@ $('.hero-slider').owlCarousel({
 /*------------------
 	Banner Slider
 --------------------*/
-// var homeSwiper = new Swiper(".home-swiper-container", {
-// 	fadeEffect: { crossFade: true },
-// 	// AutoPlay
-// 	autoplay: 500,
-// 	speed: 1000,
-// 	autoplayDisableOnInteraction: true,
-// 	slidersPerView: 1,
-// 	effect: "fade"
-// });
-
 var homeSwiper = new Swiper('.home-swiper-container',
-{
-	fadeEffect: { crossFade: true },
-	speed: 1000,
-	autoplay:
 	{
-		delay: 2000,
-	},
-	effect: "fade",
-	loop:true
-});
+		fadeEffect: { crossFade: true },
+		speed: 1000,
+		autoplay:
+		{
+			delay: 2000,
+		},
+		effect: "fade",
+		loop: true
+	});
 
 
 var copyrightYear = new Date().getFullYear();
