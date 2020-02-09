@@ -1,15 +1,18 @@
 $(window).scroll(function () {
 	var scroll = $(window).scrollTop();
 	if (scroll >= 200) {
-		// $('.gtco-nav').addClass('bg-transparent');
 		$('.gtco-nav').addClass('bg-transparent');
 		$('.gtco-nav').removeClass('bg-light');
 	} else {
 		$('.gtco-nav').addClass('bg-light');
 		$('.gtco-nav').removeClass('bg-transparent');
-		// $('.gtco-nav').removeClass('bg-light');
-
 	}
+
+	// const element = document.querySelector('.myelement');
+	// const aboutblockElement = document.querySelector('.aboutblock');
+	// aboutblockElement.classList.add('overflow-hidden');
+	// element.classList.add('animated', 'slideInUp', 'slow', '3', 'delay1', 'overflow-hidden');
+	// aboutblockElement.classList.add('overflow-hidden');
 });
 
 
@@ -354,7 +357,7 @@ $('.hero-slider').owlCarousel({
 var homeSwiper = new Swiper('.home-swiper-container',
 	{
 		fadeEffect: { crossFade: true },
-		speed: 1000,
+		speed: 2000,
 		autoplay:
 		{
 			delay: 2000,
