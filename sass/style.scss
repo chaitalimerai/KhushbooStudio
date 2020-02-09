@@ -9,6 +9,7 @@ $brand-primary: #f85a16 !default;
 $brand-secondary: #118df0 !default;
 
 $brand-red: #dc3545;
+$brand-purple: #52445b;
 $brand-white: #fff;
 $brand-black: #000;
 $brand-darker: #444;
@@ -154,7 +155,7 @@ figure {
   color: $brand-black;
   font-family: $font-primary;
   font-weight: 400;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
 }
 ::-webkit-selection {
   color: $brand-white;
@@ -179,10 +180,20 @@ figure {
 }
 
 .bg-light {
-  background-color: rgba(255, 255, 255, 0.59) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
 }
 .bg-transparent {
-  background-color: transparent !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: normal;
+}
+.section-title-border {
+  width: 100px;
+  background-color: $brand-red;
+  height: 4px;
 }
 
 .gtco-nav {
@@ -224,7 +235,7 @@ figure {
       list-style: none;
       display: inline;
       a {
-        font-size: 14px;
+        font-size: 15px;
         padding: 30px 10px;
         text-transform: uppercase;
         // color: rgba(255,255,255,.5);
@@ -336,16 +347,114 @@ figure {
   position: relative;
 }
 
+#about-block {
+  .what-we-do-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .card-block {
+      z-index: 2;
+    }
+    .card {
+      border: 0;
+      border-radius: 0;
+      top: -50px;
+      @media screen and (max-width: $screen-sm) {
+        top: 0;
+      }
+      .card-img-overlay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .card-title {
+          font-size: 26px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .about-content-block {
+      z-index: 1;
+      left: -50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: $brand-purple;
+      box-shadow: 1px 1px 20px 0 $brand-purple;
+      @media screen and (max-width: $screen-xs) {
+        left: initial;
+      }
+      .about-sub-content-block {
+        position: absolute;
+        left: 100px;
+        padding-right: 40px;
+        color: #fff;
+        font-size: 16px;
+        @media screen and (max-width: $screen-xs) {
+          position: initial;
+          padding: 15px;
+        }
+      }
+    }
+    .about-content-block-right {
+      left: 50px;
+      @media screen and (max-width: $screen-xs) {
+        left: initial;
+      }
+      .about-sub-content-block {
+        left: 0;
+        right: 50px;
+        padding-left: 60px;
+        @media screen and (max-width: $screen-xs) {
+          position: initial;
+          padding: 15px;
+        }
+      }
+    }
+  }
+  .our-team-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .card {
+      border: 0;
+      border-radius: 0;
+      .card-img-top {
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+      }
+      .card-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: #7f7f7f;
+        text-align: center;
+        padding-top: 15px;
+
+      }
+      .card-sub-title {
+        font-size: 16px;
+        font-weight: normal;
+        color: #7f7f7f;
+        text-align: center;
+      }
+    }
+  }
+}
+
 #gtco-header,
 #gtco-counter,
 .gtco-bg {
   background: url(../images/banner.jpg);
-  padding: 100px 0 0 0;
+  padding: 170px 0 0 0;
   color: #fff;
-  background-size: contain;
+  background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
+  height: auto;
 }
 
 .gtco-video {
@@ -652,10 +761,10 @@ form {
 #gtco-subscribe,
 #gtco-footer,
 .gtco-section {
-  padding: 7em 0;
+  padding: 5em 0;
   clear: both;
   @media screen and (max-width: $screen-sm) {
-    padding: 3em 0;
+    padding: 2em 0;
   }
 }
 
@@ -782,6 +891,8 @@ form {
       img {
         width: 90px;
         @include border-radius(50%);
+        object-fit: cover;
+        object-position: center;
       }
     }
 
@@ -956,6 +1067,7 @@ form {
 }
 
 #gtco-footer {
+  border-top: 2px solid #efefef;
   .gtco-footer-links {
     padding: 0;
     margin: 0 0 20px 0;
@@ -1173,11 +1285,11 @@ form {
   }
   &.gtco-nav-white {
     > i {
-      color: $brand-white;
-      background: $brand-white;
+      color: $brand-red;
+      background: $brand-red;
       &::before,
       &::after {
-        background: $brand-white;
+        background: $brand-red;
       }
     }
   }

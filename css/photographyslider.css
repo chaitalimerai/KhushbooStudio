@@ -1,4 +1,3 @@
-
 /*------------------
   Hero section
 ---------------------*/
@@ -11,6 +10,8 @@
 .hero-item {
 	height: 278px;
 	position: relative;
+	object-fit: cover;
+	object-position: center;
 }
 
 .hero-item:hover .hero-link {
